@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="criacao_crm.css" />
+    <title>Criação CRM</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="QQ.svg" />
+            <form action="formulario">
+                <legend>Formulário CRM</legend>
+                <div class="criacaocrm">
+                    <legend>Descreva sua CRM:</legend>
+                    <textarea class="form-control" id="descricao" placeholder="Descreva em detalhes sua CRM:" rows="10"
+                        cols="100"></textarea>
+                    <legend>Comportamento Offline:</legend>
+
+                    <textarea class="form-control" id="offline" placeholder="Comportamento Offline:"
+                        placeholder="Descreva em detalhes o comportamento offline:"></textarea>
+                    <legend>Demanda:</legend>
+
+                    <textarea class="form-control" id="objetivo" placeholder="Objetivo:"
+                        placeholder="Descreva em detalhes o objetivo:"></textarea>
+                    <legend>Alternativa:</legend>
+
+                    <textarea class="form-control" id="alternativa" placeholder="Alternativa:"
+                        placeholder="Descreva em detalhes o objetivo:"></textarea>
+                    <legend>Impacto:</legend>
+
+                    <textarea class="form-control" id="Impacto" placeholder="Impacto:"
+                        placeholder="Descreva em detalhes o Impactod da CRM:"></textarea>
+                </div>
+                <div class="envolvidos">
+                    Setores Envolvidos:
+                    <div class="checkbox">
+                        <label for="areas envolvidas">CLIQQ</label>
+                        <input type="checkbox" name="CLIQQ" id="CLIQQ">
+                    </div>
+                    <div class="checkbox">
+                        <label for="areas envolvidas">PDV</label>
+                        <input type="checkbox" name="PDV" id="PDV">
+                    </div>
+                    <div class="checkbox">
+                        <label for="areas envolvidas">VERDECARD</label>
+                        <input type="checkbox" name="VERDECARD" id="VERDECARD">
+                    </div>
+                    <div class="checkbox">
+                        <label for="areas envolvidas">SAP</label>
+                        <input type="checkbox" name="SAP" id="SAP">
+                    </div>
+                    <div class="checkbox">
+                        <label for="areas envolvidas">VCS</label>
+                        <input type="checkbox" name="VCS" id="VCS">
+                    </div>
+                </div>
+                <fieldset>
+                    Data de Entrega:(opcional)
+                    <input type="datetime-local" name="entrega" id="entrega">
+                </fieldset>
+
+                <fieldset>
+                    <div>
+                        <legend>Anexos</legend>
+                        <input type="file" name="anexo" id="anexo" multiple>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <p>Esta CRM depende de outro desenvolvimento?</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="opcao1">
+                        <label class="form-check-label" for="inlineRadio1">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="opcao2">
+                        <label class="form-check-label" for="inlineRadio2">Não</label>
+                    </div>
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

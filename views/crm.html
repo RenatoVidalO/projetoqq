@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="crm.css">
+    <title>CRM</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="QQ.svg">
+            <h2>Descrição:</h2>
+            <div class="text">
+                <textarea readonly name="crm_descricao" id="descricao">Descrição:</textarea>
+                <textarea readonly name="crm_offline" id="offline">Offline:</textarea>
+                <textarea readonly name="crm_objetivo" id="objetivo">Objetivo:</textarea>
+                <textarea readonly name="crm_alternativa" id="alternativa">Alternativa:</textarea>
+                <textarea readonly name="crm_impacto" id="impacto">Impacto:</textarea>
+            </div>
+            <select class="tablet">
+                <option selected>Escolha se irá aprovar ou Recusar</option>
+                <option value="1">Aprovar</option>
+                <option value="2">Recusar</option>
+            </select>
+            <h2>Aprovações:</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID Aprovador</th>
+                        <th scope="col">Setor</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Dia</th>
+                    </tr>
+            </table>
+
+            <h2>Nível de Complexidade:</h2>
+            <select class="tablet">
+                <option selected>Escolha O Nível de Complexidade</option>
+                <option value="baixa">Baixa</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+            </select>
+
+            <button type="button" class="button" data-toggle="modal" data-target="#modalExemplo">
+                <p>Salvar</p>
+            </button>
+
+
+            <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Você tem certeza?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Após confirmar você não poderá alterar sua confirmação</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

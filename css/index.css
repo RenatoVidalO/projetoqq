@@ -1,0 +1,106 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    padding-bottom: 49px;
+    display: grid;
+}
+
+span {
+    color: #FFFFFF;
+}
+
+body {
+    background-color: #1E1E1E;
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-login {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 98vh;
+}
+
+.alerta {
+    padding: 25px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.error {
+    border-color: #e8273b;
+    color: #FFF;
+    background-color: #ed5565;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    background-color: #303030;
+    width: 430px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.25);
+}
+
+.inputAcess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+input[type=id],
+input[type=password],
+input[type=text] {
+    background-color: #FFFFFF;
+    color: #7C7C8A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding-left: 10px;
+    width: 251px;
+    height: 38px;
+    border: none;
+    border-radius: 6px;
+}
+
+input[type=submit] {
+    width: 261px;
+    height: 43px;
+    background-color: #00875F;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    animation: ease-out;
+    background-color: #009b6c;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 500ms;
+}
+
+span {
+    color: #FFFFFF;
+}
+
+.acess {
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
