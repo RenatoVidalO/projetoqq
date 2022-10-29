@@ -64,33 +64,34 @@ app.post("/home" || "/error", async (req, res) => {
 });
 
 
-app.post('/createCRM', async function (req, res) {
+app.post('/criacao', async function (req, res) {
     const c = await database.transaction();
-    try{
-        let retorno = await models.Crm.max('idcrm');
-        if (retorno === null){
+    try {
+        let retorno = await models.crm.max('idcrm');
+        if (retorno === null) {
             retorno = 0;
         }
-        else{
+        else {
             retorno = parseInt(retorno);
         }
         console.log(retorno);
-        await models.Crm.create({
+        await models.crm.create({
             idcrm: retorno + 1,
             versao: 1,
-            idcolaborador_criador: req.body.matricula,
+            idcolaborador_criador: 980144,
             descricao: req.body.descricao,
-            objetivo: req.body.objetivo,
-            justificativa: req.body.justificativa,
-            comportamentooffline: req.body.comportamentooffline
+            comportamento_off: req.body.offline,
+            demanda: req.body.objetivo,
+            alternativa: req.body.alternativa,
+            impacto: req.body.impacto
         },
-        {
-            fields: ['idcrm', 'versao', 'idcolaborador_criador', 'descricao', 'objetivo', 'justificativa', 'comportamentooffline']
-        });
-        let setorRetorno = await models.Colaborador.findOne({
+            {
+                fields: ['idcrm', 'versao_crm', 'idcolaborador_criador', 'comportamento_off', 'demanda', 'alternativa', 'impacto']
+            });
+        let setorRetorno = await models.colaborador.findOne({
             attributes: ['idcolaborador', 'setor'],
-            where:{
-                idcolaborador: req.body.matricula
+            where: {
+                idcolaborador: 980144
             }
         })
         await models.SetoresEnvolvidos.create({
@@ -101,7 +102,7 @@ app.post('/createCRM', async function (req, res) {
         await c.commit();
         res.send('CRM criado com sucesso!');
     }
-    catch(error){
+    catch (error) {
         await c.rollback();
         res.send('Erro ao criar CRM: ' + error.message);
     }
