@@ -12,6 +12,7 @@ const criacao_crm = db.define('crm', {
     versao_crm: {
         type: Sequelize.INTEGER,
         default: 1,
+        primaryKey: true
     },
     descricao: {
         type: Sequelize.TEXT,
@@ -34,18 +35,15 @@ const criacao_crm = db.define('crm', {
     impacto: {
         type: Sequelize.TEXT,
         allowNull: false,
-    },
-    setor_envolvido: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
+    }
+    ,
     data_entrega: {
         type: Sequelize.DATE,
-        allowNull: false,
+        allowNull: true,
     },
     aceites: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
     }
 
 },
