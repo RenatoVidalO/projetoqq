@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('./db');
 
 
-const criacao_crm = db.define('crm', {
+const crm = db.define('crm', {
     idcrm: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -71,6 +71,6 @@ const criacao_crm = db.define('crm', {
         timestamps: false
     });
 
-criacao_crm.sync();
+console.log()
 
-module.exports = criacao_crm;
+module.exports = crm;

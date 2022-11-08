@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('./db');
 
 
+
 const setores_envolvidos = db.define('setores_envolvidos', {
     idSetor: {
         type: Sequelize.INTEGER,
@@ -18,7 +19,11 @@ const setores_envolvidos = db.define('setores_envolvidos', {
         primaryKey: true,
         allowNull: false
     }
-})
+},
+    {
+        timestamps: false
+    }
+)
 setores_envolvidos.sync();
 
 module.exports = setores_envolvidos;

@@ -14,50 +14,50 @@
     <div class="container">
         <div class="box">
             <img src="QQ.svg" />
-            <form action="formulario">
+            <form action="/criacao" method="post" enctype="multipart/form-data">
                 <legend>Formulário CRM</legend>
                 <div class="criacaocrm">
                     <legend>Descreva sua CRM:</legend>
-                    <textarea class="form-control" id="descricao" placeholder="Descreva em detalhes sua CRM:" rows="10"
+                    <textarea class="form-control" name="descricao" placeholder="Descreva em detalhes sua CRM:" rows="10"
                         cols="100"></textarea>
                     <legend>Comportamento Offline:</legend>
 
-                    <textarea class="form-control" id="offline" placeholder="Comportamento Offline:"
+                    <textarea class="form-control" name="offline" placeholder="Comportamento Offline:"
                         placeholder="Descreva em detalhes o comportamento offline:"></textarea>
                     <legend>Demanda:</legend>
 
-                    <textarea class="form-control" id="objetivo" placeholder="Objetivo:"
+                    <textarea class="form-control" name="objetivo" placeholder="Objetivo:"
                         placeholder="Descreva em detalhes o objetivo:"></textarea>
                     <legend>Alternativa:</legend>
 
-                    <textarea class="form-control" id="alternativa" placeholder="Alternativa:"
+                    <textarea class="form-control" name="alternativa" placeholder="Alternativa:"
                         placeholder="Descreva em detalhes o objetivo:"></textarea>
                     <legend>Impacto:</legend>
 
-                    <textarea class="form-control" id="impacto" placeholder="Impacto:"
+                    <textarea class="form-control" name="impacto" placeholder="Impacto:"
                         placeholder="Descreva em detalhes o Impactod da CRM:"></textarea>
                 </div>
                 <div class="envolvidos">
                     Setores Envolvidos:
                     <div class="checkbox">
                         <label for="areas envolvidas">CLIQQ</label>
-                        <input type="checkbox" name="CLIQQ" id="CLIQQ" value="1">
+                        <input type="checkbox" name="setores" id="CLIQQ" value="CLIQQ">
                     </div>
                     <div class="checkbox">
                         <label for="areas envolvidas">PDV</label>
-                        <input type="checkbox" name="PDV" id="PDV" value="2">
+                        <input type="checkbox" name="setores" id="PDV" value="PDV">
                     </div>
                     <div class="checkbox">
                         <label for="areas envolvidas">VERDECARD</label>
-                        <input type="checkbox" name="VERDECARD" id="VERDECARD" value="3">
+                        <input type="checkbox" name="setores" id="VERDECARD" value="VERDECARD">
                     </div>
                     <div class="checkbox">
                         <label for="areas envolvidas">SAP</label>
-                        <input type="checkbox" name="SAP" id="SAP" value="4">
+                        <input type="checkbox" name="setores" id="SAP" value="SAP">
                     </div>
                     <div class="checkbox">
                         <label for="areas envolvidas">VCS</label>
-                        <input type="checkbox" name="VCS" id="VCS" value="5"> 
+                        <input type="checkbox" name="setores" id="VCS" value="VCS"> 
                     </div>
                 </div>
                 <fieldset>
@@ -68,7 +68,7 @@
                 <fieldset>
                     <div>
                         <legend>Anexos</legend>
-                        <input type="file" name="anexo" id="anexo" multiple>
+                        <input type="file" name="uploadFile">
                     </div>
                 </fieldset>
                 <fieldset>
