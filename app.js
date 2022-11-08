@@ -1,10 +1,14 @@
-const bodyparser = require('body-parser')
+const bodyparser = require('body-parser');
 const express = require('express');
 const app = express();
 const login = require('./models/login');
 const feedback = require('./models/feedback');
 const criacao_crm = require('./models/criacao_crm');
 const db = require('./models/db');
+const colaborador = require('./models/colaborador');
+const SetoresEnvolvidos = require('./models/setor_envolvidos');
+const setor = require('./models/setor');
+
 
 
 //função utilizada para comparar os dados
@@ -65,9 +69,9 @@ app.post("/home" || "/error", async (req, res) => {
 
 
 app.post('/criacao', async function (req, res) {
-    const c = await database.transaction();
+    const c = await db.transaction();
     try {
-        let retorno = await models.crm.max('idcrm');
+        let retorno = await criacao_crm.max('idcrm');
         if (retorno === null) {
             retorno = 0;
         }
@@ -75,10 +79,10 @@ app.post('/criacao', async function (req, res) {
             retorno = parseInt(retorno);
         }
         console.log(retorno);
-        await models.crm.create({
+        await criacao_crm.create({
             idcrm: retorno + 1,
             versao: 1,
-            idcolaborador_criador: 980144,
+            colaborador_idColaborador: req.body.colaborador,
             descricao: req.body.descricao,
             comportamento_off: req.body.offline,
             demanda: req.body.objetivo,
@@ -86,15 +90,15 @@ app.post('/criacao', async function (req, res) {
             impacto: req.body.impacto
         },
             {
-                fields: ['idcrm', 'versao_crm', 'idcolaborador_criador', 'comportamento_off', 'demanda', 'alternativa', 'impacto']
+                fields: ['idcrm', 'versao', 'colaborador_idColaborador', 'descricao', 'comportamento_off', 'demanda', 'alternativa', 'impacto']
             });
-        let setorRetorno = await models.colaborador.findOne({
+        let setorRetorno = await colaborador.findOne({
             attributes: ['idcolaborador', 'setor'],
             where: {
-                idcolaborador: 980144
+                idcolaborador: req.body.colaborador
             }
         })
-        await models.SetoresEnvolvidos.create({
+        await SetoresEnvolvidos.create({
             crm_idcrm: retorno + 1,
             crm_versao: 1,
             setor_idsetor: setorRetorno.setor
